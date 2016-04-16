@@ -32,7 +32,7 @@ demo: [http://115.159.211.55](http://115.159.211.55)
   models/post.rb models/article.rb  
   models/tagging.rb  
   models/tag.rb  
-  为了使同一个标签名不会再tags表中出现两次，首先表中name字段为uniqe index，另外在创建Post时，以name从tag表中获取，未找到则创建新的
+  为了使同一个标签名不会再tags表中出现两次，首先表中name字段为uniqe index，另外在创建Post时，以name从tag表中获取，未找到则创建新的  
   controllers/posts_controller.rb#create
   
 6. 测试覆盖了模型和控制器
