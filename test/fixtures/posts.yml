@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Lorem ipsum dolor sit amet.
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eveniet, voluptas cupiditate voluptate fugiat quae cumque perspiciatis totam consequatur veniam minus temporibus cum possimus architecto sed illum sequi sit eaque.
+  created_at: 2016-04-15 23:40:47
+
+two:
+  title: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, autem rerum itaque veritatis inventore esse.
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quae, maiores ad esse saepe fugiat doloremque voluptatibus culpa neque quisquam ab veniam tempore nihil. Porro iure dolorem deserunt? Fugit, quis.
+  created_at: 2016-04-15 12:30:12

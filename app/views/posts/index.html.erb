@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="blog-title"><h1>My Blogs</h1></div>
+
+<div class="new-blog"><%= link_to 'New Blog', new_post_path %></div>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="title">
+         <%= link_to post.title, post %>
+      </div>
+      <div class="body"><%= truncate(post.body, length: 200, separator: "...") %></div>
+      
+      <!-- 在没有新的comment的情况下，直接从缓存中读取 -->
+      <%= cache(cache_key_for_top3_comments(post.id)) do %>
+        <div class="top3-comments">
+          <% post.top3_comments.each do |comment| %>
+            <div class="comment">
+              <div class="comment-user"><span class="user-name"><%= comment.user %></span> <span class="created_at"><%= time_ago_in_words(comment.created_at) %> ago</span>:</div>
+              <div class="comment-body"><%= truncate(comment.body, length: 140, separator: "...") %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="footer-line">
+        <div class="created_at"><%= post.created_at.strftime('%F %T') %></div>
+        <div class="actions">
+          <%= link_to 'Detail', post %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,61 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blog-title {
+  float: left;
+}
+
+.new-blog {
+  float: right;
+  line-height: 55px;
+  margin-right: 15px;
+}
+
+.posts {
+  clear: both;
+}
+
+.post {
+  padding: 8px 0 0px 0;
+  border-bottom: 1px solid #ddd;
+  clear: both;
+  overflow: hidden;
+}
+
+
+.post .footer-line {
+  margin-top: 5px;
+  color: #888;
+  font-size: 8.5pt;
+}
+.footer-line .created_at {
+  float: right;
+}
+.footer-line .actions {
+  float: left;
+}
+.footer-line a {
+  color: #888;
+  font-size: 8.5pt;
+}
+.footer-line a:visited {
+  color: #888;
+}
+
+
+.post .top3-comments {
+  margin-top: 6px;
+  padding-left: 10px;
+  padding-right: 30px;
+  border-left: 2px solid #bbb;
+}
+.top3-comments .comment-user {
+  font-size: 8.5pt;
+  float: left;
+  color: #888;
+}
+.top3-comments .comment-body {
+  clear: both;
+}
+

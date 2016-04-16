@@ -1,0 +1,29 @@
+<%= form_for(@comment, remote: true, format: :json, html: { class: :comment_form }) do |f| %>
+
+  <div id="error_explanation" style='display:none;'>
+    <ul>
+      <% if @comment.errors.any? %>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div>
+    <input type="hidden" name="comment[publication_id]" value="<%= publication_id %>">
+    <input type="hidden" name="comment[publication_type]" value="<%= publication_type %>">
+  </div>
+  
+  <div class="field">
+    <%= f.label :user%><br>
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, rows: 5, style: 'width: 100%', placeholder: 'Input something here.' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

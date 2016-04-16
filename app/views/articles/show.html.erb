@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>标签:</strong>
+  <%= @article.tags_string %>
+</p>
+
+<strong>Comments:</strong>
+<div class="comment-part">
+  
+  <%= render partial: 'comments/form', locals: { publication_id: @article.id, publication_type: 'Article' } %>
+  
+  <div class="comments">
+    <% @article.comments.each do |comment| %>
+      <div class="comment">
+        <div class="user"><%= comment.user %>:</div>
+        <div class="created_at"><%= time_ago_in_words comment.created_at %> ago</div>
+        <div class="body"><%= comment.body %></div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
