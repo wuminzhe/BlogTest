@@ -22,6 +22,7 @@ class ArticlesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to article_path(assigns(:article))
+    assert_equal 'Article was successfully created.', flash[:notice]
   end
 
   test "should show article" do

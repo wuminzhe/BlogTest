@@ -2,7 +2,7 @@
 
 <div class="blog-title"><h1>My Blogs</h1></div>
 
-<div class="new-blog"><%= link_to 'New Blog', new_post_path %></div>
+<div class="new-blog"><%= link_to 'New Blog', new_post_path %>  |  <%= link_to 'Articles', articles_path %></div>
 
 <div class="posts">
   <% @posts.each do |post| %>
@@ -36,3 +36,5 @@
     </div>
   <% end %>
 </div>
+
+
